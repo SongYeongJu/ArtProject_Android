@@ -9,8 +9,11 @@ public class Picture implements Serializable {
     private int cost;
     private int src;
     private String url;
+    private boolean like;
 
-    public Picture(){}
+    public Picture(){
+        like=false;
+    }
     public Picture(String id, String name, String artist, int cost,int src, String url){
         setID(id);
         setName(name);
@@ -18,7 +21,9 @@ public class Picture implements Serializable {
         setCost(cost);
         setSrc(src);
         setUrl(url);
+        like=false;
     }
+    public void setLike(boolean like) {this.like=like;}
     public void setID(String id) { this.id=id; }
     public void setName(String name){ this.name=name;}
     public void setArtist(String artist) { this.artist=artist;}
@@ -32,5 +37,6 @@ public class Picture implements Serializable {
     public int getCost(){ return cost; }
     public int getSrc(){ return src; }
     public String getUrl(){ return url; }
+    public boolean getLike() { return like; }
 
 }

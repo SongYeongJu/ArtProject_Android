@@ -36,7 +36,7 @@ public class Tab2Fragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_tab2, container, false);
 
         timeline = (ListView) view.findViewById(R.id.itemListView);
-        adapter = new ItemListViewAdapter(getActivity(), R.layout.item_layout, clientInfoManager.getPictures());    // 데이터
+        adapter = new ItemListViewAdapter(getActivity(), R.layout.item_layout, ItemListViewAdapter.PICTURE);    // 데이터
         timeline.setAdapter(adapter);
 
         return view;

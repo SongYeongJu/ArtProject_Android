@@ -14,30 +14,32 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.artproject.Activities.BuyActivity;
-import com.example.artproject.Data.Picture;
+import com.example.artproject.Client.ClientInfoManager;
 import com.example.artproject.R;
-
-import java.util.ArrayList;
 
 public class ItemListViewAdapter extends BaseAdapter {
     private Context context;
     private int layout;
-    private ArrayList<Picture> pictures;
     private LayoutInflater inf;
+    private ClientInfoManager clientInfoManager=ClientInfoManager.getInstance();
+    private int type;
+    static public int PICTURE = 1111;
+    static public int RECPICTURE = 2222;
 
-    public ItemListViewAdapter(Context context, int layout, ArrayList<Picture> pictures) {
+    public ItemListViewAdapter(Context context, int layout, int type) {
         this.context = context;
         this.layout = layout;
-        this.pictures=pictures;
         inf = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.type=type;
     }
     @Override
     public int getCount() {
-        if(pictures!=null) return pictures.size();
+        if(type==PICTURE && clientInfoManager.getPictures()!=null) return clientInfoManager.getPictures().size();
+        if(type==RECPICTURE && clientInfoManager.getRecommendPictures()!=null) return clientInfoManager.getRecommendPictures().size();
         return 0;
     }
     @Override
-    public Object getItem(int position) { return pictures.get(position); }
+    public Object getItem(int position) { return clientInfoManager.getPictures().get(position); }
     @Override
     public long getItemId(int position) { return position; }
     @Override
@@ -51,7 +53,14 @@ public class ItemListViewAdapter extends BaseAdapter {
         heartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                heartButton.setImageResource();
+                if(clientInfoManager.getPictures().get(pos).getLike())  {
+                    clientInfoManager.getPictures().get(pos).setLike(false);
+                    heartButton.setImageResource(R.drawable.heart);
+                } else {
+                    clientInfoManager.getPictures().get(pos).setLike(true);
+                    heartButton.setImageResource(R.drawable.full_heart);
+                }
+
             }
         });
 
@@ -64,15 +73,15 @@ public class ItemListViewAdapter extends BaseAdapter {
 
         final ImageView imageView =(ImageView)convertView.findViewById(R.id.itemImageView);
 
-        imageView.setImageResource(pictures.get(pos).getSrc());
+        imageView.setImageResource(clientInfoManager.getPictures().get(pos).getSrc());
 
         final TextView itemNameTextView=(TextView)convertView.findViewById(R.id.itemNameTextView);
         final TextView artistTextView=(TextView)convertView.findViewById(R.id.artistTextView);
         final TextView costTextView=(TextView)convertView.findViewById(R.id.costTextView);
 
-        itemNameTextView.setText(pictures.get(pos).getName());
-        artistTextView.setText(pictures.get(pos).getArtist());
-        costTextView.setText(pictures.get(pos).getCost()+"원");
+        itemNameTextView.setText(clientInfoManager.getPictures().get(pos).getName());
+        artistTextView.setText(clientInfoManager.getPictures().get(pos).getArtist());
+        costTextView.setText(clientInfoManager.getPictures().get(pos).getCost()+"원");
 
         final Button cartButton=(Button)convertView.findViewById(R.id.cartButton);
         final Button buyButton=(Button)convertView.findViewById(R.id.buyButton);
@@ -87,7 +96,7 @@ public class ItemListViewAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(view.getContext(), BuyActivity.class);
-                intent.putExtra("picture",pictures.get(pos));
+                intent.putExtra("picture",clientInfoManager.getPictures().get(pos));
                 view.getContext().startActivity(intent);
             }
         });

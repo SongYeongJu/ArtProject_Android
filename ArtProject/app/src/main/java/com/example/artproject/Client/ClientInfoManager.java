@@ -57,43 +57,25 @@ public class ClientInfoManager {
 
 
     public void setTestRecommendPictureSet() {
+//        int[] src ={R.drawable.image1,R.drawable.image2,R.drawable.image3,R.drawable.image4,R.drawable.image5,R.drawable.image6,R.drawable.image7,R.drawable.image8,R.drawable.image9,R.drawable.image10,R.drawable.image11,R.drawable.image12};
+//        for(int i=1;i<11;i++) {
+//            recommendPictures.add(new Picture("id"+i, "name"+i, "artist"+i, i*100, src[i], null));
+//        }
         recommendPictures.add(new Picture("id1", "name1", "artist1", 100, R.drawable.ba1, null));
-        recommendPictures.add(new Picture("id3", "name3", "artist3", 300, R.drawable.ba3, null));
-        recommendPictures.add(new Picture("id4", "name4", "artist4", 400, R.drawable.icon, null));
-        recommendPictures.add(new Picture("id1", "name1", "artist1", 100, R.drawable.ba1, null));
-        recommendPictures.add(new Picture("id2", "name2", "artist2", 200, R.drawable.ba2, null));
-        recommendPictures.add(new Picture("id3", "name3", "artist3", 300, R.drawable.ba3, null));
-        recommendPictures.add(new Picture("id1", "name1", "artist1", 100, R.drawable.ba1, null));
-        recommendPictures.add(new Picture("id3", "name3", "artist3", 300, R.drawable.ba3, null));
-        recommendPictures.add(new Picture("id4", "name4", "artist4", 400, R.drawable.icon, null));
-        recommendPictures.add(new Picture("id1", "name1", "artist1", 100, R.drawable.ba1, null));
-        recommendPictures.add(new Picture("id2", "name2", "artist2", 200, R.drawable.ba2, null));
-        recommendPictures.add(new Picture("id3", "name3", "artist3", 300, R.drawable.ba3, null));
         recommendPictures.add(new Picture("id2", "name2", "artist2", 200, R.drawable.ba2, null));
         recommendPictures.add(new Picture("id3", "name3", "artist3", 300, R.drawable.ba3, null));
     }
     public void setTestPictureSet() {
-        pictures.add(new Picture("id2","name2","artist2",200, R.drawable.ba2,null));
-        pictures.add(new Picture("id3","name3","artist3",300, R.drawable.ba3,null));
-        pictures.add(new Picture("id1","name1","artist1",100, R.drawable.ba1,null));
-        pictures.add(new Picture("id3","name3","artist3",300, R.drawable.ba3,null));
-        pictures.add(new Picture("id4","name4","artist4",400, R.drawable.icon,null));
-        pictures.add(new Picture("id1","name1","artist1",100, R.drawable.ba1,null));
-        pictures.add(new Picture("id2","name2","artist2",200, R.drawable.ba2,null));
-        pictures.add(new Picture("id2","name2","artist2",200, R.drawable.ba2,null));
-        pictures.add(new Picture("id3","name3","artist3",300, R.drawable.ba3,null));
-        pictures.add(new Picture("id4","name4","artist4",400, R.drawable.icon,null));
-        pictures.add(new Picture("id4","name4","artist4",400, R.drawable.icon,null));
-        pictures.add(new Picture("id4","name4","artist4",400, R.drawable.icon,null));
-        pictures.add(new Picture("id1","name1","artist1",100, R.drawable.ba1,null));
-        pictures.add(new Picture("id2","name2","artist2",200, R.drawable.ba2,null));
-        pictures.add(new Picture("id3","name3","artist3",300, R.drawable.ba3,null));
-        pictures.add(new Picture("id2","name2","artist2",200, R.drawable.ba2,null));
-        pictures.add(new Picture("id3","name3","artist3",300, R.drawable.ba3,null));
-        pictures.add(new Picture("id1","name1","artist1",100, R.drawable.ba1,null));
-        pictures.add(new Picture("id3","name3","artist3",300, R.drawable.ba3,null));
-        pictures.add(new Picture("id4","name4","artist4",400, R.drawable.icon,null));
-        pictures.add(new Picture("id4","name4","artist4",400, R.drawable.icon,null));
+        int[] src ={R.drawable.image1,R.drawable.image2,R.drawable.image3,R.drawable.image4,R.drawable.image5,R.drawable.image6,R.drawable.image7,R.drawable.image8,R.drawable.image9,R.drawable.image10,R.drawable.image11,R.drawable.image12};
+        for(int i=0;i<11;i++) {
+            pictures.add(new Picture("id"+i, "name"+i, "artist"+i, i*100, src[i], null));
+        }
+        for(int i=0;i<11;i++) {
+            pictures.add(new Picture("id"+i, "name"+i, "artist"+i, i*100, src[i], null));
+        }
+        pictures.add(new Picture("id1", "name1", "artist1", 100, R.drawable.ba1, null));
+        pictures.add(new Picture("id2", "name2", "artist2", 200, R.drawable.ba2, null));
+        pictures.add(new Picture("id3", "name3", "artist3", 300, R.drawable.ba3, null));
     }
 
     //TO-DO : create method for changing user's information

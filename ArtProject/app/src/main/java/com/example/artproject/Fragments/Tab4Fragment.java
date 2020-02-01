@@ -1,8 +1,6 @@
 package com.example.artproject.Fragments;
 
 import android.content.Intent;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.OvalShape;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,10 +42,11 @@ public class Tab4Fragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        profileImageView=(ImageView)getActivity().findViewById(R.id.profileImageView);
+        View view =  inflater.inflate(R.layout.fragment_tab4, container, false);
+//        profileImageView=(ImageView)view.findViewById(R.id.profileImageView);
 
-        settingButton1=(Button)getActivity().findViewById(R.id.settingButton1);
-        settingButton2=(Button)getActivity().findViewById(R.id.settingButton2);
+        settingButton1=(Button)view.findViewById(R.id.settingButton1);
+        settingButton2=(Button)view.findViewById(R.id.settingButton2);
 
         settingButton1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,11 +61,8 @@ public class Tab4Fragment extends Fragment {
             }
         });
 
-        // make ImageView to round
-        profileImageView.setBackground(new ShapeDrawable(new OvalShape()));
-        profileImageView.setClipToOutline(true);
 
-        listView=(ListView)getActivity().findViewById(R.id.myItemListView);
+        listView=(ListView)view.findViewById(R.id.myItemListView);
         adapter = new GridViewAdapter(getActivity(), R.layout.row, clientInfoManager.getPictures());    // 데이터
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -50,8 +50,8 @@ public class ItemInfoActivity extends AppCompatActivity {
         scrollView=(ScrollView)findViewById(R.id.scrollView);
 
         try {
-            Intent intent=getIntent();
-            item=(Picture)intent.getExtras().get("picture");
+                Intent intent=getIntent();
+                item=(Picture)intent.getExtras().get("picture");
 
             itemImageView.setImageResource(item.getSrc());
 
@@ -62,7 +62,9 @@ public class ItemInfoActivity extends AppCompatActivity {
             BuyButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    Intent intent= new Intent(ItemInfoActivity.this,BuyActivity.class);
+                    intent.putExtra("picture",item);
+                    startActivity(intent);
                 }
             });
             CartButton.setOnClickListener(new View.OnClickListener() {
