@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -22,6 +23,10 @@ public class Tab1Fragment extends Fragment {
     private ClientInfoManager clientInfoManager=ClientInfoManager.getInstance();
     private GridView gv;
     private GridViewAdapter adapter;
+    private TextView category1TextView;
+    private TextView category2TextView;
+    private TextView category3TextView;
+    private TextView category4TextView;
 
 
     public Tab1Fragment() { }
@@ -50,6 +55,41 @@ public class Tab1Fragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        category1TextView=view.findViewById(R.id.category1TextView);
+        category1TextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                adapter = new GridViewAdapter (getActivity(), R.layout.row, clientInfoManager.getPictures());    // 데이터
+                gv.setAdapter(adapter);
+            }
+        });
+        category2TextView=view.findViewById(R.id.category2TextView);
+        category2TextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                adapter = new GridViewAdapter (getActivity(), R.layout.row, clientInfoManager.getRecommendPictures());    // 데이터
+                gv.setAdapter(adapter);
+            }
+        });
+        category3TextView=view.findViewById(R.id.category3TextView);
+        category3TextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                adapter = new GridViewAdapter (getActivity(), R.layout.row, clientInfoManager.getPictures());    // 데이터
+                gv.setAdapter(adapter);
+            }
+        });
+
+        category4TextView=view.findViewById(R.id.category4TextView);
+        category4TextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                adapter = new GridViewAdapter (getActivity(), R.layout.row, clientInfoManager.getRecommendPictures());    // 데이터
+                gv.setAdapter(adapter);
+            }
+        });
+
         return view;
     }
 }

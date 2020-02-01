@@ -23,14 +23,14 @@ public class BuyActivity extends AppCompatActivity {
 
         imageView=findViewById(R.id.buyImageView);
         nameTextView=findViewById(R.id.buyNameTextView);
-        costTextView=findViewById(R.id.costTextView);
+        costTextView=findViewById(R.id.buyCostTextView);
 
         try {
             Intent intent = getIntent();
             picture = (Picture) intent.getExtras().get("picture");
             imageView.setImageResource(picture.getSrc());
             nameTextView.setText(picture.getArtist()+" ["+picture.getName()+"]");
-            costTextView.setText(picture.getCost()+"원");
+            costTextView.setText(picture.getCost() + "원");
         }catch (Exception e) {
 
         }
