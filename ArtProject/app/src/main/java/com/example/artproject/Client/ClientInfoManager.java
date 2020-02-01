@@ -46,13 +46,15 @@ public class ClientInfoManager {
     public ArrayList<Taste> getTastes(){ return tastes;}
 
     public void setTestTasteSet() {
-        tastes.add(new Taste("taste1",R.drawable.ba1));
-        tastes.add(new Taste("taste2",R.drawable.ba1));
-        tastes.add(new Taste("taste3",R.drawable.ba1));
-        tastes.add(new Taste("taste4",R.drawable.ba1));
-        tastes.add(new Taste("taste5",R.drawable.ba1));
-        tastes.add(new Taste("taste6",R.drawable.ba1));
-        tastes.add(new Taste("taste7",R.drawable.ba1));
+        tastes.add(new Taste("한국 화가",R.drawable.ba1));
+        tastes.add(new Taste("인상파",R.drawable.ba1));
+        tastes.add(new Taste("유화",R.drawable.ba1));
+        tastes.add(new Taste("졸업 작품",R.drawable.ba1));
+        tastes.add(new Taste("신인 작품",R.drawable.ba1));
+        tastes.add(new Taste("고가의 작품",R.drawable.ba1));
+        tastes.add(new Taste("저가의 작품",R.drawable.ba1));
+        tastes.add(new Taste("오래된 작품",R.drawable.ba1));
+        tastes.add(new Taste("새로나온 작품",R.drawable.ba1));
     }
 
 

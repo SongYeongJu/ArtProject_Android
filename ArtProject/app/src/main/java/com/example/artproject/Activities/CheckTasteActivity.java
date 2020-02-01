@@ -3,7 +3,6 @@ package com.example.artproject.Activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -27,14 +26,14 @@ public class CheckTasteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_check_taste);
 
 
-        listView=(ListView)findViewById(R.id.myItemListView);
+        listView=(ListView)findViewById(R.id.tasteListView);
         adapter = new ListViewAdapter(CheckTasteActivity.this, R.layout.taste, clientInfoManager.getTastes());    // 데이터
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            }
-        });
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//            }
+//        });
 
         finishButton=(Button)findViewById(R.id.tasteFinishButton);
         finishButton.setOnClickListener(new View.OnClickListener() {

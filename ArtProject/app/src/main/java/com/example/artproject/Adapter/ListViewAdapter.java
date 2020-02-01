@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
-import android.widget.ImageView;
 
 import com.example.artproject.Data.Taste;
 import com.example.artproject.R;
@@ -40,11 +39,9 @@ public class ListViewAdapter extends BaseAdapter {
         if (convertView==null) convertView = inf.inflate(layout, null);
 
         final CheckBox checkBox = (CheckBox)convertView.findViewById(R.id.tasteCheckBox);
-        final ImageView iv = (ImageView)convertView.findViewById(R.id.tasteImageView);
         final int pos=position;
 
         checkBox.setText(tastes.get(pos).getTasteName());
-        iv.setImageResource(tastes.get(pos).getSrc());
 
         return convertView;
     }

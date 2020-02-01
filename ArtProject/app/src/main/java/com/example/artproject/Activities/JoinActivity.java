@@ -32,6 +32,10 @@ public class JoinActivity extends AppCompatActivity {
         joinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent2 = new Intent(JoinActivity.this, CheckTasteActivity.class);
+                startActivity(intent2);
+                finish();
+
                 String email=emailTextView.getText().toString();
                 if(email.contains("@") && email.contains(".")) {
                     if(pwTextView.toString().length()<8) {
@@ -43,7 +47,7 @@ public class JoinActivity extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     } else {
-                        Toast.makeText(JoinActivity.this,"pw and pw-check are not same",Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(JoinActivity.this,"pw and pw-check are not same",Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     Toast.makeText(JoinActivity.this,"email is invalid",Toast.LENGTH_SHORT).show();
