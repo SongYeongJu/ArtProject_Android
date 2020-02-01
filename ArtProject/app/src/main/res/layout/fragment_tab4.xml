@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkGrayBackground"
+    android:orientation="vertical"
+    tools:context=".Fragments.Tab4Fragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="100dp"
+        android:layout_weight="3">
+
+        <ImageView
+            android:id="@+id/profileImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:src="@drawable/jackson" />
+
+        <Button
+            android:id="@+id/settingButton1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="100dp"
+            android:background="@drawable/real_round_shape_accent" />
+
+        <Button
+            android:id="@+id/settingButton2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="100dp"
+            android:background="@drawable/real_round_shape_primary" />
+
+    </FrameLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal|top"
+        android:paddingTop="5dp"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:text="Profile" />
+
+    <ListView
+        android:id="@+id/myItemListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3" />
+
+
+</LinearLayout>
